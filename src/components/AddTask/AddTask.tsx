@@ -1,11 +1,7 @@
 import React, {useState} from 'react';
-import {
-  View,
-  StyleSheet,
-  TextInput,
-  TouchableOpacity,
-  Text,
-} from 'react-native';
+import {View, TextInput, TouchableOpacity, Text} from 'react-native';
+import styles from './AddTaskStyles';
+
 type AddTaskProps = {
   addTask: (text: string) => void;
 };
@@ -22,7 +18,6 @@ export default function AddTask({addTask}: AddTaskProps) {
     console.log('Add item clicked:', text);
   };
   const onChangeText = (newText: string) => {
-    console.log(newText);
     setText(newText);
   };
 
@@ -42,33 +37,3 @@ export default function AddTask({addTask}: AddTaskProps) {
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    height: 120,
-    backgroundColor: 'white',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-  },
-  textInput: {
-    height: 50,
-    width: 350,
-    borderColor: '#EEE',
-    borderWidth: 1,
-    borderRadius: 5,
-    padding: 5,
-  },
-  button: {
-    height: 50,
-    width: 200,
-    backgroundColor: '#FF5A5F',
-    borderRadius: 5,
-    justifyContent: 'center',
-  },
-  buttonText: {
-    color: 'white',
-    fontSize: 20,
-    fontWeight: '600',
-    textAlign: 'center',
-  },
-});

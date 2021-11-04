@@ -1,13 +1,15 @@
 import React from 'react';
-import {View, FlatList, StyleSheet, Text} from 'react-native';
-import {Task} from '../models/Task';
-import ListTasksItem from './ListTasksItem';
+import {View, FlatList, Text} from 'react-native';
+import {Task} from '../../models/Task';
+import styles from './ListTasksStyles';
+import ListTasksItem from './ListTasksItem/ListTasksItem';
 
 type ListTasksPros = {
   tasks: Task[];
   toggleTask: (id: string) => void;
   deleteTask: (id: string) => void;
 };
+
 export default function ListTasks({
   tasks,
   toggleTask,
@@ -33,19 +35,3 @@ export default function ListTasks({
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  list: {
-    alignSelf: 'stretch',
-  },
-  emptyListText: {
-    color: 'gray',
-    fontSize: 30,
-    alignItems: 'center',
-  },
-});

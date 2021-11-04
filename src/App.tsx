@@ -1,12 +1,12 @@
 import React, {useState} from 'react';
 import {SafeAreaView, StyleSheet} from 'react-native';
-import Header from './src/components/Header';
+import Header from './components/Header/Header';
 import {v4 as uuid} from 'uuid';
-import {Task} from './src/models/Task';
-import AddTask from './src/components/AddTask';
-import ListTasks from './src/components/ListTasks';
-import {mockTasks} from './mocks/tasks';
-import Card from './src/components/Card';
+import {Task} from './models/Task';
+import AddTask from './components/AddTask/AddTask';
+import ListTasks from './components/ListTasks/ListTasks';
+import {mockTasks} from '../mocks/tasks';
+import Card from './common/Card';
 
 const App = () => {
   const [tasks, setTasks] = useState<Task[]>(mockTasks);
