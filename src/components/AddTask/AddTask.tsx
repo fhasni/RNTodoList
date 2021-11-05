@@ -1,14 +1,16 @@
 import React, {useState} from 'react';
 import {View, TextInput, TouchableOpacity, Text} from 'react-native';
+import {useDispatch} from 'react-redux';
+import {bindActionCreators} from 'redux';
 import styles from './AddTaskStyles';
+import * as actionCreators from '../../state/task/taskActionCreators';
 
-type AddTaskProps = {
-  addTask: (text: string) => void;
-};
+type AddTaskProps = {};
 
-export default function AddTask({addTask}: AddTaskProps) {
+export default function AddTask({}: AddTaskProps) {
   const [text, setText] = useState('');
-
+  const dispatch = useDispatch();
+  const {addTask} = bindActionCreators(actionCreators, dispatch);
   const onButtonClicked = () => {
     if (text === '') {
       return;
